@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'KGLEarthSceneView', :exclusive => true do
+  pod "KGLEarthSceneView", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "KGLEarthSceneView", :path => "../"
+
+  
+end

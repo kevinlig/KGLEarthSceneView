@@ -1,0 +1,17 @@
+PODS:
+  - HexColors (2.2.1)
+  - KGLEarthSceneView (0.1.0):
+    - HexColors (~> 2.2.1)
+
+DEPENDENCIES:
+  - KGLEarthSceneView (from `../`)
+
+EXTERNAL SOURCES:
+  KGLEarthSceneView:
+    :path: ../
+
+SPEC CHECKSUMS:
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  KGLEarthSceneView: fe4c248818941e7d016ada0c8f8320876e1fda09
+
+COCOAPODS: 0.35.0
