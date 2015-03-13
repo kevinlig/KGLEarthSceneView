@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <KGLEarthSceneView/KGLEarthSceneView.h>
 
-@interface KGLViewController : UIViewController
+@interface KGLViewController : UIViewController <KGLEarthSceneViewDelegate>
 
 @property (weak) IBOutlet KGLEarthSceneView *earthScene;
+@property (weak) IBOutlet UILabel *countryLabel;
+
+- (IBAction)flyToLondon:(id)sender;
 
 @end

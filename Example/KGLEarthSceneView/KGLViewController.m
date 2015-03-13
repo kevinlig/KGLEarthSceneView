@@ -25,12 +25,29 @@
     KGLEarthCoordinate *londonPin = [KGLEarthCoordinate coordinateWithLatitude:51.499970f andLongitude:-0.124696f andPinIdentifier:@"London"];
     
     [self.earthScene dropPinsAtLocations:@[washingtonPin,canberraPin, londonPin]];
+    
+    
+    // format the label
+    self.countryLabel.backgroundColor = [UIColor colorWithHexString:@"5d5d5d" alpha:0.5f];
+    self.countryLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)flyToLondon:(id)sender {
+    [self.earthScene swoopToLatitude:51.499970f andLongitude:-0.124696f completion:^{
+        // animation has completed
+        self.countryLabel.text = @"London";
+    }];
+}
+
+#pragma mark - Earth delegate method
+- (void)tappedPinWithIdentifier:(NSString *)identifier {
+    self.countryLabel.text = identifier;
 }
 
 @end

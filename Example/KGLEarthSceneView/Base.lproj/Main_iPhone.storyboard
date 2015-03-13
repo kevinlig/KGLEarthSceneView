@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,17 +20,48 @@
                             <sceneKitView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="877-H9-N1d" customClass="KGLEarthSceneView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="MBu-fD-lb6"/>
+                                </connections>
                             </sceneKitView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqq-iW-9zI">
+                                <rect key="frame" x="0.0" y="534" width="320" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="PkE-Tb-SyK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkC-oi-Qwh">
+                                <rect key="frame" x="16" y="28" width="111" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Tag-a9-7tb"/>
+                                    <constraint firstAttribute="width" constant="111" id="k61-I2-Gr9"/>
+                                </constraints>
+                                <state key="normal" title="London">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flyToLondon:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="h0g-So-r9X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Vqq-iW-9zI" secondAttribute="trailing" id="5Ag-os-2DR"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Vqq-iW-9zI" secondAttribute="bottom" id="6Qw-wZ-b7K"/>
+                            <constraint firstItem="IkC-oi-Qwh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="BJO-G5-o1X"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="877-H9-N1d" secondAttribute="bottom" id="BhJ-uU-zIk"/>
+                            <constraint firstItem="Vqq-iW-9zI" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="NcQ-7c-bBv"/>
+                            <constraint firstItem="IkC-oi-Qwh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ReV-jM-SRi"/>
                             <constraint firstItem="877-H9-N1d" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bK2-We-eMg"/>
                             <constraint firstItem="877-H9-N1d" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="kga-nw-dO5"/>
                             <constraint firstAttribute="trailing" secondItem="877-H9-N1d" secondAttribute="trailing" id="uR1-Mj-0F5"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countryLabel" destination="Vqq-iW-9zI" id="48v-YK-2Xb"/>
                         <outlet property="earthScene" destination="877-H9-N1d" id="an6-Hc-aTG"/>
                         <outlet property="view" destination="kh9-bI-dsS" id="nKt-rq-07D"/>
                     </connections>
